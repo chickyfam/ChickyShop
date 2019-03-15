@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker pull chickyfam/react-native-android
-  - docker run chickyfam/react-native-android -c './android/gradlew assembleRelease'
+  - docker run chickyfam/react-native-android /bin/sh -c './android/gradlew assembleRelease'
 
 script:
   - "./android/gradlew assembleRelease"
