@@ -6,7 +6,9 @@ services:
 
 before_install:
   - docker pull chickyfam/react-native-android
-  - docker run -v `pwd`:/root chickyfam/react-native-android
+  - docker run -it -v ${TRAVIS_BUILD_DIR}:/root chickyfam/react-native-android /bin/bash
 
 script:
+  - "pwd"
+  - "ls -lAF"
   - "./chickyfam/ChickyShop/android/gradlew assembleRelease"
