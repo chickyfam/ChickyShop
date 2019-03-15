@@ -1,11 +1,12 @@
 os: linux
+dist: xenial
 
 services:
   - docker
 
 before_install:
   - docker pull chickyfam/react-native-android
-  - docker run -v ${TRAVIS_BUILD_DIR}:/root chickyfam/react-native-android
+  - docker run -v `pwd`:/root chickyfam/react-native-android
 
 script:
   - "./chickyfam/ChickyShop/android/gradlew assembleRelease"
