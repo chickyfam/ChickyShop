@@ -9,4 +9,4 @@ before_install:
   - docker run chickyfam/react-native-android /bin/sh -c 'ls -lAF'
 
 script:
-  - "./android/gradlew assembleRelease"
+  - "./chickyfam/ChickyShop/android/gradlew assembleRelease"
