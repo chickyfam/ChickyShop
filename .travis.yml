@@ -6,7 +6,7 @@ services:
 
 before_install:
   - docker pull chickyfam/react-native-android
-  - docker run -it -v ${TRAVIS_BUILD_DIR}:/root chickyfam/react-native-android /bin/bash
+  - docker run -it -v ${TRAVIS_BUILD_DIR}:/root chickyfam/react-native-android /bin/bash -c 'pwd'
 
 script:
   - "pwd"
