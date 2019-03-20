@@ -4,7 +4,7 @@ import { Dimensions } from 'react-native';
 import Menu from 'ChickyShop/src/components/Main/Menu/Menu';
 import TabContainer from 'ChickyShop/src/Navigators/TabNavigator';
 
-const { height, width } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const DrawerNavigator = createDrawerNavigator(
     {
