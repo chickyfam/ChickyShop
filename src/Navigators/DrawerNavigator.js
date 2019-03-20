@@ -1,10 +1,10 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
 import { createDrawerNavigator } from 'react-navigation';
-
+import { Dimensions } from 'react-native';
 import Menu from 'ChickyShop/src/components/Main/Menu/Menu';
 import TabContainer from 'ChickyShop/src/Navigators/TabNavigator';
-import Main from 'ChickyShop/src/components/Main/Main';
+
+const { height, width } = Dimensions.get('window');
 
 const DrawerNavigator = createDrawerNavigator(
     {
@@ -16,7 +16,8 @@ const DrawerNavigator = createDrawerNavigator(
         }
     },
     {
-        contentComponent: ({ navigation }) => <Menu navigation={navigation} />
+        contentComponent: ({ navigation }) => <Menu navigation={navigation} />,
+        drawerWidth: width / 2
     }
 );
 
