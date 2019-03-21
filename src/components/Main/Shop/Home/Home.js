@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Image } from 'react-native';
+
+const HomeIcon = require('ChickyShop/media/icons/home.png');
+const HomeSelectedICon = require('ChickyShop/media/icons/home-selected.png');
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+    static navigationOptions = {
+        tabBarIcon: ({ focused }) => <Image source={focused ? HomeSelectedICon : HomeIcon} />,
+      };
 
-  render() {
-    return (
-      <View>
-        <Text> Home </Text>
-      </View>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+    }
+
+    render() {
+        return (
+            <View>
+                <Text> Home </Text>
+            </View>
+        );
+    }
 }

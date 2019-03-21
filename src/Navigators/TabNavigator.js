@@ -11,20 +11,27 @@ const styles = require('ChickyShop/src/styles');
 
 const { height } = Dimensions.get('window');
 
-const TabNavigator = createBottomTabNavigator({
-    HOME: {
-        screen: Home
+const TabNavigator = createBottomTabNavigator(
+    {
+        HOME: {
+            screen: Home,
+        },
+        CART: {
+            screen: Cart
+        },
+        SEARCH: {
+            screen: Search
+        },
+        CONTACT: {
+            screen: Contact
+        }
     },
-    CART: {
-        screen: Cart
-    },
-    SEARCH: {
-        screen: Search
-    },
-    CONTACT: {
-        screen: Contact
+    {
+        tabBarOptions: {
+            activeTintColor: styles.appColor
+        }
     }
-});
+);
 
 const StackContainer = createStackNavigator(
     {

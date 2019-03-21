@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+
+const ContactIcon = require('ChickyShop/media/icons/contact.png');
+const ContactSelectedICon = require('ChickyShop/media/icons/contact-selected.png');
 
 export default class Contact extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    static navigationOptions = {
+        tabBarIcon: ({ focused }) => <Image source={focused ? ContactSelectedICon : ContactIcon} />,
     };
-  }
 
-  render() {
-    return (
-      <View>
-        <Text> Contact </Text>
-      </View>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+    }
+
+    render() {
+        return (
+            <View>
+                <Text> Contact </Text>
+            </View>
+        );
+    }
 }
