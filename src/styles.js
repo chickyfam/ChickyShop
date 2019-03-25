@@ -43,3 +43,35 @@ export const Header = StyleSheet.create({
         paddingLeft: 10,
     }
 });
+
+export const Menu = StyleSheet.create({
+    Container: {
+        flex: 1,
+        padding: 10,
+        backgroundColor: appColor,
+    },
+    Profile: {
+        flex: 0.3,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    ProfilePicture: {
+        flex: 0.9,
+        borderRadius: 300
+    },
+    ProfileName: {
+        flex: 0.1,
+        marginTop: 10,
+        textAlign: 'center',
+        color: 'white'
+    },
+    ButtonContainer: {
+        flex: 0.7,
+        paddingTop: 10,
+    },
+    Button: {
+        borderRadius: 10,
+        marginTop: 10,
+        backgroundColor: 'white',
+    }
+});
