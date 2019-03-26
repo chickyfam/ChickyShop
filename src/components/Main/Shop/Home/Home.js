@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Image, ScrollView } from 'react-native';
+import Collection from 'ChickyShop/src/components/Main/Shop/Home/Collection/Collection';
+import Category from 'ChickyShop/src/components/Main/Shop/Home/Category/Category';
+import TopProduct from 'ChickyShop/src/components/Main/Shop/Home/TopProduct/TopProduct';
+
+const styles = require('ChickyShop/src/styles');
 
 const HomeIcon = require('ChickyShop/media/icons/home.png');
 const HomeSelectedICon = require('ChickyShop/media/icons/home-selected.png');
@@ -17,9 +22,17 @@ export default class Home extends Component {
 
     render() {
         return (
-            <View>
-                <Text> Home </Text>
-            </View>
+            <ScrollView style={styles.Home.Container}>
+                <View style={styles.Home.Collection}>
+                    <Collection />
+                </View>
+                <View style={styles.Home.Category}>
+                    <Category />
+                </View>
+                <View style={styles.Home.TopProduct}>
+                    <TopProduct />
+                </View>
+            </ScrollView>
         );
     }
 }
