@@ -9,7 +9,7 @@ export default class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedIn: true,
+            isLoggedIn: false,
             profileName: 'Chicky Shop'
         };
     }

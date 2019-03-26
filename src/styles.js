@@ -195,3 +195,65 @@ export const Product = StyleSheet.create({
         color: 'red'
     }
 });
+
+export const Authentication = StyleSheet.create({
+    Container: {
+        flex: 1,
+        backgroundColor: appColor
+    },
+    Header: {
+        flex: 0.05,
+        paddingTop: 20,
+    },
+    MainForm: {
+        flex: 0.8,
+    },
+    Footer: {
+        flex: 0.15,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    SignIn: {
+        backgroundColor: 'white',
+        marginRight: 1,
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 40,
+        paddingRight: 40,
+        borderTopLeftRadius: 20,
+        borderBottomLeftRadius: 20,
+    },
+    SignUp: {
+        backgroundColor: 'white',
+        marginLeft: 1,
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 40,
+        paddingRight: 40,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+    }
+});
+
+export const SignIn = StyleSheet.create({
+    Container: {
+        flex: 1,
+        marginTop: 30,
+        padding: 30,
+    },
+    Input: {
+        backgroundColor: 'white',
+        margin: 10,
+        borderRadius: 20,
+        paddingLeft: 20,
+    },
+    Button: {
+        margin: 10,
+        marginBottom: 50,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: 'white',
+        borderRadius: 20,
+    }
+});
