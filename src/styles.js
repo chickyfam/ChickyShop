@@ -1,11 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 export const appColor = '#2ABB9C';
 export const Slogan = 'Chicky Fashion Shop';
-export const W_Width = width;
-export const W_Height = height;
 
 export const Header = StyleSheet.create({
     Container: {
@@ -255,5 +253,57 @@ export const SignIn = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
         borderRadius: 20,
+    }
+});
+
+export const ChangeInfo = StyleSheet.create({
+    Container: {
+        flex: 1,
+        backgroundColor: '#e3e7ed'
+    },
+    Header: {
+        flex: 0.1,
+        padding: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: appColor,
+    },
+    HeaderLeft: {
+        flex: 0.1
+    },
+    HeaderRight: {
+        flex: 0.1
+    },
+    HeaderCenter: {
+        flex: 0.8,
+        justifyContent: 'center',
+    },
+    HeaderTitle: {
+        textAlign: 'center',
+        fontSize: 16,
+        color: 'white'
+    },
+    MainForm: {
+        flex: 0.9,
+        padding: 20,
+        justifyContent: 'center',
+    },
+    Input: {
+        marginBottom: 10,
+        paddingLeft: 20,
+        borderWidth: 1,
+        borderRadius: 20,
+        borderColor: appColor,
+        backgroundColor: 'white'
+    },
+    Button: {
+        marginTop: 10,
+        padding: 10,
+        backgroundColor: appColor,
+        borderRadius: 20,
+    },
+    ButtonTitle: {
+        color: 'white',
+        textAlign: 'center',
     }
 });
