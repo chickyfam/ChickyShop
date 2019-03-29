@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-
-const styles = require('ChickyShop/src/styles');
-const BackIcon = require('ChickyShop/media/icons/back.png');
-const Logo = require('ChickyShop/media/icons/logo.png');
+import { HeaderStyle } from './styles';
+import GlobalVars from 'ChickyShop/src/GlobalVars';
 
 export default class Header extends Component {
     constructor(props) {
@@ -14,21 +12,21 @@ export default class Header extends Component {
 
     render() {
         return (
-            <View style={styles.OrderHistory.Header}>
-                <View style={styles.OrderHistory.HeaderLeft}>
+            <View style={HeaderStyle.Container}>
+                <View style={HeaderStyle.HeaderLeft}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.navigate('MAIN')}
                     >
-                        <Image source={BackIcon} />
+                        <Image source={GlobalVars.BackIcon} />
                     </TouchableOpacity>
                 </View>
-                <View style={styles.OrderHistory.HeaderCenter}>
-                    <Text style={styles.OrderHistory.HeaderTitle}>
+                <View style={HeaderStyle.HeaderCenter}>
+                    <Text style={HeaderStyle.HeaderTitle}>
                         Order History
                     </Text>
                 </View>
-                <View style={styles.OrderHistory.HeaderRight}>
-                    <Image source={Logo} />
+                <View style={HeaderStyle.HeaderRight}>
+                    <Image source={GlobalVars.appLogo} />
                 </View>
             </View>
         );

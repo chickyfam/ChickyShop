@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-
-const styles = require('ChickyShop/src/styles');
+import { ItemStyle } from './styles';
+import GlobalVars from 'ChickyShop/src/GlobalVars';
 
 export default class OrderItem extends Component {
     constructor(props) {
@@ -12,44 +12,44 @@ export default class OrderItem extends Component {
 
     render() {
         return (
-            <View style={styles.OrderItem.Container}>
-                <View style={styles.OrderItem.Row}>
-                    <View style={styles.OrderItem.LeftContent}>
+            <View style={ItemStyle.Container}>
+                <View style={ItemStyle.Row}>
+                    <View style={ItemStyle.LeftContent}>
                         <Text>Order ID:</Text>
                     </View>
-                    <View style={styles.OrderItem.RightContent}>
-                        <Text style={{ textAlign: 'right', color: styles.appColor }}>
-                            ORD01
+                    <View style={ItemStyle.RightContent}>
+                        <Text style={{ textAlign: 'right', color: GlobalVars.appColor }}>
+                            ORD{this.props.ID}
                         </Text>
                     </View>
                 </View>
-                <View style={styles.OrderItem.Row}>
-                    <View style={styles.OrderItem.LeftContent}>
+                <View style={ItemStyle.Row}>
+                    <View style={ItemStyle.LeftContent}>
                         <Text>Order time:</Text>
                     </View>
-                    <View style={styles.OrderItem.RightContent}>
+                    <View style={ItemStyle.RightContent}>
                         <Text style={{ textAlign: 'right', color: '#ad3973' }}>
-                            2019
+                            {this.props.Time}
                         </Text>
                     </View>
                 </View>
-                <View style={styles.OrderItem.Row}>
-                    <View style={styles.OrderItem.LeftContent}>
+                <View style={ItemStyle.Row}>
+                    <View style={ItemStyle.LeftContent}>
                         <Text>Status:</Text>
                     </View>
-                    <View style={styles.OrderItem.RightContent}>
-                        <Text style={{ textAlign: 'right', color: styles.appColor }}>
-                            Pending
+                    <View style={ItemStyle.RightContent}>
+                        <Text style={{ textAlign: 'right', color: GlobalVars.appColor }}>
+                            {this.props.Status}
                         </Text>
                     </View>
                 </View>
-                <View style={styles.OrderItem.Row}>
-                    <View style={styles.OrderItem.LeftContent}>
+                <View style={ItemStyle.Row}>
+                    <View style={ItemStyle.LeftContent}>
                         <Text>Total:</Text>
                     </View>
-                    <View style={styles.OrderItem.RightContent}>
+                    <View style={ItemStyle.RightContent}>
                         <Text style={{ textAlign: 'right', color: '#ad3973', fontWeight: 'bold' }}>
-                            123$
+                            {this.props.Price}$
                         </Text>
                     </View>
                 </View>
