@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 import { Button } from 'react-native-elements';
+import { MenuStyle } from './styles';
+import GlobalVars from 'ChickyShop/src/GlobalVars';
 
-const styles = require('ChickyShop/src/styles');
 const ProfileIcon = require('ChickyShop/media/icons/profile.png');
 
 export default class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedIn: false,
+            isLoggedIn: true,
             profileName: 'Chicky Shop'
         };
     }
@@ -18,21 +19,21 @@ export default class Menu extends Component {
         const SingedForm = (
             <View>
                 <Button
-                    buttonStyle={styles.Menu.Button}
+                    buttonStyle={MenuStyle.Button}
                     title="Change Info"
-                    titleStyle={{ color: styles.appColor }}
+                    titleStyle={{ color: GlobalVars.appColor }}
                     onPress={() => this.props.navigation.navigate('CHANGE_INFO')}
                 />
                 <Button
-                    buttonStyle={styles.Menu.Button}
+                    buttonStyle={MenuStyle.Button}
                     title="Order History"
-                    titleStyle={{ textAlign: 'left', color: styles.appColor }}
+                    titleStyle={{ textAlign: 'left', color: GlobalVars.appColor }}
                     onPress={() => this.props.navigation.navigate('ORDER_HISTORY')}
                 />
                 <Button
-                    buttonStyle={styles.Menu.Button}
+                    buttonStyle={MenuStyle.Button}
                     title="Log Out"
-                    titleStyle={{ color: styles.appColor }}
+                    titleStyle={{ color: GlobalVars.appColor }}
                     onPress={() => this.props.navigation.navigate('AUTHENTICATION')}
                 />
             </View>
@@ -41,9 +42,9 @@ export default class Menu extends Component {
         const UnsignedForm = (
             <View>
                 <Button
-                    buttonStyle={styles.Menu.Button}
+                    buttonStyle={MenuStyle.Button}
                     title="Sign In"
-                    titleStyle={{ color: styles.appColor }}
+                    titleStyle={{ color: GlobalVars.appColor }}
                     onPress={() => this.props.navigation.navigate('AUTHENTICATION')}
                 />
             </View>
@@ -53,16 +54,16 @@ export default class Menu extends Component {
         const profileName = this.state.isLoggedIn ? this.state.profileName : '';
 
         return (
-            <View style={styles.Menu.Container}>
-                <View style={styles.Menu.Profile}>
+            <View style={MenuStyle.Container}>
+                <View style={MenuStyle.Profile}>
                     <Image
-                        style={styles.Menu.ProfilePicture}
+                        style={MenuStyle.ProfilePicture}
                         source={ProfileIcon}
                         resizeMode='contain'
                     />
-                    <Text style={styles.Menu.ProfileName}>{ profileName }</Text>
+                    <Text style={MenuStyle.ProfileName}>{ profileName }</Text>
                 </View>
-                <View style={styles.Menu.ButtonContainer}>
+                <View style={MenuStyle.ButtonContainer}>
                     { ButtonForm }
                 </View>
             </View>
