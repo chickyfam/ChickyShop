@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
-
-const styles = require('ChickyShop/src/styles');
-const BackIcon = require('ChickyShop/media/icons/back.png');
-const LogoIcon = require('ChickyShop/media/icons/logo.png');
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { HeaderStyle } from './styles';
+import GlobalVars from 'ChickyShop/src/GlobalVars';
 
 export default class Header extends Component {
     constructor(props) {
@@ -14,22 +12,22 @@ export default class Header extends Component {
 
     render() {
         return (
-            <View style={styles.Header.Container}>
-                <View style={styles.Header.Top}>
-                    <View style={styles.Header.HeaderLeft}>
+            <View style={HeaderStyle.Container}>
+                <View style={HeaderStyle.Top}>
+                    <View style={HeaderStyle.Left}>
                         <TouchableOpacity
                             onPress={() => this.props.navigation.navigate('MAIN')}
                         >
-                            <Image
-                                source={BackIcon}
-                            />
+                            <Image source={GlobalVars.BackIcon} />
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.Header.HeaderCenter}>
-                        <Text style={styles.Header.Slogan}>{styles.Slogan}</Text>
+                    <View style={HeaderStyle.Center}>
+                        <Text style={HeaderStyle.Slogan}>
+                            {GlobalVars.appSlogan}
+                        </Text>
                     </View>
-                    <View style={styles.Header.HeaderRight}>
-                        <Image source={LogoIcon}/>
+                    <View style={HeaderStyle.Right}>
+                        <Image source={GlobalVars.appLogo} />
                     </View>
                 </View>
             </View>

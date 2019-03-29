@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, Text, TextInput, TouchableOpacity } from 'react-native';
-
-const styles = require('ChickyShop/src/styles');
+import { MainFormStyle } from './styles';
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -12,17 +11,17 @@ export default class SignIn extends Component {
 
     render() {
         return (
-            <ScrollView style={styles.SignIn.Container}>
+            <ScrollView style={MainFormStyle.Container}>
                 <TextInput
-                    style={styles.SignIn.Input}
+                    style={MainFormStyle.Input}
                     placeholder='Enter your email'
                 />
                 <TextInput
-                    style={styles.SignIn.Input}
+                    style={MainFormStyle.Input}
                     placeholder='Enter your password'
                     secureTextEntry
                 />
-                <TouchableOpacity style={styles.SignIn.Button}>
+                <TouchableOpacity style={MainFormStyle.Button}>
                     <Text style={{ textAlign: 'center', color: 'white' }}>
                         SIGN IN NOW
                     </Text>

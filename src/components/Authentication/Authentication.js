@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import Header from 'ChickyShop/src/components/Authentication/Header';
-
-import SignIn from 'ChickyShop/src/components/Authentication/SignIn';
-import SignUp from 'ChickyShop/src/components/Authentication/SignUp';
-
-const styles = require('ChickyShop/src/styles');
+import { View } from 'react-native';
+import Header from './Header';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+import Footer from './Footer';
+import { AuthStyle } from './styles';
 
 export default class Authentication extends Component {
     constructor(props) {
@@ -15,40 +14,28 @@ export default class Authentication extends Component {
         };
     }
 
+    changeState() {
+        this.setState({
+            isSignIn: !this.state.isSignIn
+        });
+    }
+
     render() {
         const MainForm = this.state.isSignIn ? <SignIn /> : <SignUp />;
 
         return (
-            <View style={styles.Authentication.Container}>
-                <View style={styles.Authentication.Header}>
+            <View style={AuthStyle.Container}>
+                <View style={AuthStyle.Header}>
                     <Header navigation={this.props.navigation} />
                 </View>
-                <View style={styles.Authentication.MainForm}>
-                    {MainForm}
+                <View style={AuthStyle.MainForm}>
+                    { MainForm }
                 </View>
-                <View style={styles.Authentication.Footer}>
-                    <TouchableOpacity
-                        style={styles.Authentication.SignIn}
-                        disabled={this.state.isSignIn}
-                        onPress={() => this.setState({ isSignIn: true })}
-                    >
-                        <Text
-                            style={{ color: this.state.isSignIn ? styles.appColor : 'lightgrey' }}
-                        >
-                            SIGN IN
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.Authentication.SignUp}
-                        disabled={!this.state.isSignIn}
-                        onPress={() => this.setState({ isSignIn: false })}
-                    >
-                        <Text
-                            style={{ color: this.state.isSignIn ? 'lightgrey' : styles.appColor }}
-                        >
-                            SIGN UP
-                        </Text>
-                    </TouchableOpacity>
+                <View style={AuthStyle.Footer}>
+                    <Footer
+                        changeState={() => this.changeState()}
+                        state={this.state.isSignIn}
+                    />
                 </View>
             </View>
         );
