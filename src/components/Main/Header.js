@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
-
-const styles = require('ChickyShop/src/styles');
-const MenuIcon = require('ChickyShop/media/icons/menu.png');
-const LogoIcon = require('ChickyShop/media/icons/logo.png');
+import GlobalVars from 'ChickyShop/src/GlobalVars';
+import { HeaderStyle } from './styles';
 
 export default class Header extends Component {
     constructor(props) {
@@ -14,27 +12,27 @@ export default class Header extends Component {
 
     render() {
         return (
-            <View style={styles.Header.Container}>
-                <View style={styles.Header.Top}>
-                    <View style={styles.Header.HeaderLeft}>
+            <View style={HeaderStyle.Container}>
+                <View style={HeaderStyle.Top}>
+                    <View style={HeaderStyle.HeaderLeft}>
                         <TouchableOpacity
                             onPress={() => this.props.navigation.openDrawer()}
                         >
                             <Image
-                                source={MenuIcon}
+                                source={GlobalVars.MenuIcon}
                             />
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.Header.HeaderCenter}>
-                        <Text style={styles.Header.Slogan}>{styles.Slogan}</Text>
+                    <View style={HeaderStyle.HeaderCenter}>
+                        <Text style={HeaderStyle.Slogan}>{GlobalVars.appSlogan}</Text>
                     </View>
-                    <View style={styles.Header.HeaderRight}>
-                        <Image source={LogoIcon}/>
+                    <View style={HeaderStyle.HeaderRight}>
+                        <Image source={GlobalVars.appLogo} />
                     </View>
                 </View>
-                <View style={styles.Header.Bottom}>
+                <View style={HeaderStyle.Bottom}>
                     <TextInput
-                        style={styles.Header.Search}
+                        style={HeaderStyle.Search}
                         placeholder='What do you want to buy?'
                     />
                 </View>
